@@ -129,11 +129,18 @@ gameContainer.innerHTML = ''
 
 divScore.innerText =`Score: ${score}`
 countDiv.innerText =`Count :${count}`
-let lowS =localStorage.getItem('low-score') || Infinity;
-if(score < lowS ){
+let lowS =localStorage.getItem('low-score') || Infinity
+
+
+
+if(score > lowS ){
   localStorage.setItem('low-score',score)
   
  }
+ if(lowS === null){
+  score = 0
+}
+ 
  divBest.innerText =`Best Score:${lowS}`
  console.log(divBest)
 
